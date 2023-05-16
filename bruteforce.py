@@ -1,6 +1,7 @@
 import csv
 from itertools import combinations
 import time
+import matplotlib.pyplot as plt
 
 start_time = time.time()
 
@@ -19,13 +20,17 @@ def read_csv():
         return data_list
     
 
+#Algorithme bruteforce
 def main():
     datas = read_csv()
     profit = 0
     best_option = []
     print(f"\n\n{len(datas)} actions pour {max_investment} euros")
+    #O(n2)= Polynomial Complexity = runtime depends on the input size = loop nested loops
     for i in range(len(datas)):
+    #O(r)
         data_combinations = combinations(datas, i+1)
+        #O(nlogn)= Loglinear vcomplexity as sorting algorithmes
         for d in data_combinations:
             cost = get_prices(d)
             if cost <= max_investment:
@@ -38,7 +43,9 @@ def main():
         print(f"{b[0]}, {b[1]}, {b[2]}%")
     print(f"\n\nLe coût total: {get_prices(best_option)} euros")
     print(f"Profit après 2 ans: {profit} euros")
-    print(f"Temps d'éxecution: {time.time() - start_time} secondes")
+    execution_time = time.time() - start_time
+    print(f"Temps d'éxecution: {execution_time} secondes")
+    #Overall: O(n2)
 
 
 def get_prices(datas):

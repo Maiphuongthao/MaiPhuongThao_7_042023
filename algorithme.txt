@@ -1,0 +1,29 @@
+Algorithmes main
+Variable
+	datas[20]: tableau chaîne de caractères
+	profit <- 0: REEL
+	max_investment<- 500: REEL
+	best_option[]: tableau chaîne de caractères
+Début
+	Afficher “datas.taille() actions pour max_investment euros”
+	Pour i allant de 0 à data.taille()
+		data_combinations = combinations(datas, i++)
+		Pour d dans data_combinations
+			cost = get_prices(d)
+			Si cost <= max_investiment
+                sum_profit = get_profit(d)
+                Si sum_profit > profit
+                    profit = sum_profit
+                        best_option = d
+                Fin Si
+			Fin Si
+		Fin Pour
+	Fin Pour
+	Afficher “La combinations le plus rentable: best_option.taille()”
+	Pour b dans best_option
+		Afficher “b[0], b[1], b[2]%”
+	Fin Pour
+	Afficher “Le coût total :  get_prices(best_option) euros ”
+	Afficher “Profit après 2 ans : profit euros ”
+	Afficher “Temps d'exécution: time secondes ”
+

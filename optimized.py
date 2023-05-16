@@ -21,6 +21,7 @@ def read_csv(file):
         print(f"\n{file} n'existe pas. Veuillez donner le bon fichier")
         time.sleep(1)
 
+#Algorithme optimized
 def knapsack(datas):
     """
     A Dynamic programing for 0-1 Knapsack problem
@@ -58,7 +59,6 @@ def knapsack(datas):
     #Get combinations while there is money to invest and there is actions to buy
     combinations = []
     while max_invest >=0 and n>=0:
-      
         if k[n][max_invest] == k[n-1][max_invest-w[n-1]]+ v[n-1]:
             combinations.append(datas[n-1])
             max_invest -= w[n-1]
@@ -77,10 +77,10 @@ def knapsack(datas):
     print(f"Temps exécusion: {time.time()-start_time} secondes.")
 
 data_test = read_csv('data/test.csv')
-#dataset1 = read_csv("data/dataset1_Python+P7.csv")
-#dataset2= read_csv('data/dataset2_Python+P7.csv')
+dataset1 = read_csv("data/dataset1_Python+P7.csv")
+dataset2= read_csv('data/dataset2_Python+P7.csv')
 knapsack(data_test)
-#knapsack(dataset1)
-#knapsack(dataset2)
+knapsack(dataset1)
+knapsack(dataset2)
 
     
