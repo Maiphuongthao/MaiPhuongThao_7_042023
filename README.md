@@ -21,7 +21,7 @@
 ### MacOS et Linux :
     git clone https://github.com/Maiphuongthao/MaiPhuongThao_7_042023.git
 
-     cd MaiPhuongThao_7_042023
+    cd MaiPhuongThao_7_042023
     python3 -m venv env 
     source env/bin/activate
 
